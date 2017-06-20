@@ -1,0 +1,91 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ufl.uexplore</groupId>
+	<artifactId>uexplore-rest-server</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>uexplore-rest-server</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/javax.enterprise/cdi-api -->
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-server -->
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>2.26-b04</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-common -->
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-common</artifactId>
+			<version>2.26-b04</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.8.0-alpha2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/de.grundid.opendatalab/geojson-jackson -->
+		<dependency>
+			<groupId>de.grundid.opendatalab</groupId>
+			<artifactId>geojson-jackson</artifactId>
+			<version>1.8</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-configuration2 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-configuration2</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.5</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.inject/guice -->
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core -->
+		<!-- <dependency> <groupId>org.apache.tomcat.embed</groupId> <artifactId>tomcat-embed-core</artifactId> 
+			<version>9.0.0.M21</version> </dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-logging-juli -->
+		<!-- <dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-logging-juli</artifactId>
+			<version>9.0.0.M6</version>
+		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-server -->
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
+			<version>9.4.6.v20170531</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-webapp -->
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-webapp</artifactId>
+			<version>9.4.6.v20170531</version>
+		</dependency>
+
+	</dependencies>
+	<properties>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+	</properties>
+</project>
