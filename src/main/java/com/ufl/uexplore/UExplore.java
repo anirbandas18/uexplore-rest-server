@@ -1,22 +1,30 @@
 package com.ufl.uexplore;
 
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.FutureTask;
 
-import com.ufl.uexplore.core.EmbeddedHttpServer;
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
+import org.glassfish.jersey.servlet.ServletContainer;
 
 public class UExplore {
-	
+
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
-		EmbeddedHttpServer server = new EmbeddedHttpServer();
-		FutureTask<Integer> serverTask = new FutureTask<>(server);
-		ExecutorService executorService = Executors.newSingleThreadExecutor();
-		Future<?> result = executorService.submit(serverTask);
-		Integer value = (Integer) result.get();
-		//return value;
+		Server jettyServer = new Server(5001);
+		ServletContextHandler context = new ServletContextHandler(ServletContextHandler.NO_SESSIONS | ServletContextHandler.SECURITY);
+		context.setContextPath("/");
+		jettyServer.setHandler(context);
+		ServletHolder serHol = context.addServlet(ServletContainer.class, "/");
+        serHol.setInitOrder(1);
+        serHol.setInitParameter("jersey.config.server.provider.packages", 
+                "com.ufl.uexplore.controller");
+		try {
+			jettyServer.start();
+			jettyServer.join();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-	
+
 }
